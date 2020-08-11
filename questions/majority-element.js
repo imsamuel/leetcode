@@ -21,16 +21,16 @@
  * @throws Will throw an error if array does not contain a majority element.
  */
 const majorityElement = (nums) => {
-  const numToFrequency = {};
+  const numToCount = {};
   for (let i = 0; i < nums.length; i += 1) {
     const num = nums[i];
-    if (numToFrequency[num] !== undefined) {
-      numToFrequency[num] += 1;
+    if (numToCount[num] !== undefined) {
+      numToCount[num] += 1;
     } else {
-      numToFrequency[num] = 1;
+      numToCount[num] = 1;
     }
 
-    if (numToFrequency[num] > nums.length / 2) {
+    if (numToCount[num] > nums.length / 2) {
       return num;
     }
   }
